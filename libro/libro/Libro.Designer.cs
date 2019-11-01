@@ -30,6 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_openCorreo = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_filter = new System.Windows.Forms.Button();
             this.txt_filter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,8 +41,7 @@
             this.btn_openfile = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grv_data = new System.Windows.Forms.DataGridView();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_openCorreo = new System.Windows.Forms.Button();
+            this.btn_text = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btn_text);
             this.groupBox3.Controls.Add(this.btn_openCorreo);
             this.groupBox3.Controls.Add(this.btn_eliminar);
             this.groupBox3.Controls.Add(this.btn_filter);
@@ -75,6 +77,26 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtros";
+            // 
+            // btn_openCorreo
+            // 
+            this.btn_openCorreo.Location = new System.Drawing.Point(128, 83);
+            this.btn_openCorreo.Name = "btn_openCorreo";
+            this.btn_openCorreo.Size = new System.Drawing.Size(75, 23);
+            this.btn_openCorreo.TabIndex = 5;
+            this.btn_openCorreo.Text = "Correos";
+            this.btn_openCorreo.UseVisualStyleBackColor = true;
+            this.btn_openCorreo.Click += new System.EventHandler(this.Btn_openCorreo_Click);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Location = new System.Drawing.Point(26, 83);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.btn_eliminar.TabIndex = 4;
+            this.btn_eliminar.Text = "Elimnar";
+            this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
             // btn_filter
             // 
@@ -158,25 +180,15 @@
             this.grv_data.Size = new System.Drawing.Size(855, 306);
             this.grv_data.TabIndex = 0;
             // 
-            // btn_eliminar
+            // btn_text
             // 
-            this.btn_eliminar.Location = new System.Drawing.Point(26, 83);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
-            this.btn_eliminar.TabIndex = 4;
-            this.btn_eliminar.Text = "Elimnar";
-            this.btn_eliminar.UseVisualStyleBackColor = true;
-            this.btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
-            // 
-            // btn_openCorreo
-            // 
-            this.btn_openCorreo.Location = new System.Drawing.Point(128, 83);
-            this.btn_openCorreo.Name = "btn_openCorreo";
-            this.btn_openCorreo.Size = new System.Drawing.Size(75, 23);
-            this.btn_openCorreo.TabIndex = 5;
-            this.btn_openCorreo.Text = "Correos";
-            this.btn_openCorreo.UseVisualStyleBackColor = true;
-            this.btn_openCorreo.Click += new System.EventHandler(this.Btn_openCorreo_Click);
+            this.btn_text.Location = new System.Drawing.Point(254, 83);
+            this.btn_text.Name = "btn_text";
+            this.btn_text.Size = new System.Drawing.Size(100, 23);
+            this.btn_text.TabIndex = 6;
+            this.btn_text.Text = "Generar Texto";
+            this.btn_text.UseVisualStyleBackColor = true;
+            this.btn_text.Click += new System.EventHandler(this.Btn_text_Click);
             // 
             // Libro
             // 
@@ -213,5 +225,6 @@
         private System.Windows.Forms.DataGridView grv_data;
         private System.Windows.Forms.Button btn_openCorreo;
         private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.Button btn_text;
     }
 }

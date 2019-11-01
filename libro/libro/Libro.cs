@@ -109,5 +109,11 @@ namespace libro
             EnviarCorreo correo = new EnviarCorreo();
             correo.Show();
         }
+
+        private void Btn_text_Click(object sender, EventArgs e)
+        {
+            XLSConectión conect = new XLSConectión(fileName, hoja);
+            DataSet data = conect.GetAllDataText();
+        }
     }
 }

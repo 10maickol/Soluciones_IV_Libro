@@ -43,6 +43,27 @@ namespace libro
             
             return _dataSet;
         }
+        public DataSet GetAllDataText()
+        {
+
+            string consultaHojaExcel = "Select [isbn/issn],[titulo],[autor],[año],[Editorial] from [" + hoja + "$]";
+            DataSet _dataSet = new DataSet();
+            try
+            {
+                dataAdapter = new OleDbDataAdapter(consultaHojaExcel, conexion); //traemos los datos de la hoja y las guardamos en un dataSdapter
+                                                                                 // creamos la instancia del objeto DataSet
+                dataAdapter.Fill(_dataSet, hoja);//llenamos el dataset
+                                                 //dataGridView1.DataSource = dataSet.Tables[0]; //le asignamos al DataGridView el contenido del dataSet
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+            return _dataSet;
+        }
         public DataTable GetColumnsFilter()
         {
             DataTable dt = new DataTable();
@@ -72,7 +93,7 @@ namespace libro
             }
             return dt;
         }
-
+        
         public DataSet GetDataFilter(String ColumnFilter,String Value)
         {
             string consultaHojaExcel = "Select * from [" + hoja + "$] WHERE ["+ ColumnFilter.Trim() + "] LIKE '%"+ Value + "%'";
@@ -95,7 +116,7 @@ namespace libro
         }
         public void DeleteRow(String pos)
         {
-            string consultaHojaExcel = "delete from [" + hoja + "$] WHERE [Ord] = '" + pos + "'";
+            string consultaHojaExcel = "delete from [" + hoja + "$] WHERE [Ord] = " + pos + "";
             DataSet _dataSet2 = new DataSet();
             try
             {
