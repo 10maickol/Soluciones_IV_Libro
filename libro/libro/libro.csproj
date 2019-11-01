@@ -67,6 +67,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XLSConectión.cs" />
+    <EmbeddedResource Include="EnviarCorreo.resx">
+      <DependentUpon>EnviarCorreo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Libro.resx">
       <DependentUpon>Libro.cs</DependentUpon>
     </EmbeddedResource>
