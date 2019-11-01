@@ -40,6 +40,16 @@ namespace libro
                 txt_archivoname.Text = dialog.FileName;
 
                 fileName= dialog.FileName;
+                if (!fileName.Equals("") || !hoja.Equals(""))
+                {
+                    XLSConectión conect = new XLSConectión(fileName, hoja);
+                    cbo_filtro.DataSource = conect.GetColumnsFilter();
+                    cbo_filtro.DisplayMember = "Nombre";
+                    cbo_filtro.ValueMember = "Value";
+                    cbo_filtro.SelectedIndex = 0;
+                    grv_data.DataSource = conect.GetAllData().Tables[0];
+                    
+                }
                 //el nombre del archivo sera asignado al textbox
                 //txtArchivo.Text = dialog.FileName;
                 //hoja = txtHoja.Text; //la variable hoja tendra el valor del textbox donde colocamos el nombre de la hoja
@@ -54,8 +64,26 @@ namespace libro
         {
             if (!fileName.Equals("")||!hoja.Equals(""))
             {
-                XLSConectión conect = new XLSConectión();
-                grv_data.DataSource = conect.GetAllData(fileName, hoja).Tables[0];
+               
+                //cbo_filtro.DataSource = conect.GetColumnsFilter();
+                //cbo_filtro.DisplayMember = "Nombre";
+                //cbo_filtro.ValueMember = "Value";
+                //cbo_filtro.SelectedIndex = 0;
+                String _filter = cbo_filtro.SelectedValue.ToString();
+                if (_filter.Equals("1"))
+                {
+                    XLSConectión conect = new XLSConectión(fileName, hoja);
+                    grv_data.DataSource = conect.GetAllData().Tables[0];
+                }
+                else
+                {
+                    String val = txt_filter.Text;
+                    
+                    XLSConectión conect = new XLSConectión(fileName, hoja);
+                    grv_data.DataSource = conect.GetDataFilter(_filter, val).Tables[0];
+                    
+                }
+
             }
         }
     }

@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_filter = new System.Windows.Forms.Button();
+            this.txt_filter = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbo_filtro = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_archivoname = new System.Windows.Forms.Label();
             this.btn_openfile = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbo_filtro = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_filter = new System.Windows.Forms.Button();
             this.grv_data = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inicio";
             this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btn_filter);
+            this.groupBox3.Controls.Add(this.txt_filter);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.cbo_filtro);
+            this.groupBox3.Location = new System.Drawing.Point(271, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(410, 112);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Filtros";
+            // 
+            // btn_filter
+            // 
+            this.btn_filter.Location = new System.Drawing.Point(324, 41);
+            this.btn_filter.Name = "btn_filter";
+            this.btn_filter.Size = new System.Drawing.Size(75, 23);
+            this.btn_filter.TabIndex = 3;
+            this.btn_filter.Text = "Filtrar";
+            this.btn_filter.UseVisualStyleBackColor = true;
+            this.btn_filter.Click += new System.EventHandler(this.Btn_filter_Click);
+            // 
+            // txt_filter
+            // 
+            this.txt_filter.Location = new System.Drawing.Point(171, 43);
+            this.txt_filter.Name = "txt_filter";
+            this.txt_filter.Size = new System.Drawing.Size(136, 20);
+            this.txt_filter.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Columna de filtro";
+            // 
+            // cbo_filtro
+            // 
+            this.cbo_filtro.FormattingEnabled = true;
+            this.cbo_filtro.Location = new System.Drawing.Point(26, 43);
+            this.cbo_filtro.Name = "cbo_filtro";
+            this.cbo_filtro.Size = new System.Drawing.Size(121, 21);
+            this.cbo_filtro.TabIndex = 0;
             // 
             // panel1
             // 
@@ -98,53 +145,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lisbros";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btn_filter);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.cbo_filtro);
-            this.groupBox3.Location = new System.Drawing.Point(271, 19);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(410, 112);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Filtros";
-            // 
-            // cbo_filtro
-            // 
-            this.cbo_filtro.FormattingEnabled = true;
-            this.cbo_filtro.Location = new System.Drawing.Point(26, 43);
-            this.cbo_filtro.Name = "cbo_filtro";
-            this.cbo_filtro.Size = new System.Drawing.Size(121, 21);
-            this.cbo_filtro.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Columna de filtro";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(171, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // btn_filter
-            // 
-            this.btn_filter.Location = new System.Drawing.Point(324, 41);
-            this.btn_filter.Name = "btn_filter";
-            this.btn_filter.Size = new System.Drawing.Size(75, 23);
-            this.btn_filter.TabIndex = 3;
-            this.btn_filter.Text = "Filtrar";
-            this.btn_filter.UseVisualStyleBackColor = true;
-            this.btn_filter.Click += new System.EventHandler(this.Btn_filter_Click);
-            // 
             // grv_data
             // 
             this.grv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -164,11 +164,11 @@
             this.Name = "Libro";
             this.Text = "Libro";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_data)).EndInit();
             this.ResumeLayout(false);
 
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Button btn_openfile;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_filter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_filter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbo_filtro;
         private System.Windows.Forms.DataGridView grv_data;

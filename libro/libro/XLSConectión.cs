@@ -11,46 +11,87 @@ namespace libro
 {
     class XLSConectión
     {
-        public  DataSet GetAllData(string archivo, string hoja)
+        OleDbConnection conexion = null;
+        //DataSet dataSet = null;
+        OleDbDataAdapter dataAdapter = null;
+        String hoja;
+        public XLSConectión(string archivo, string hoja)
         {
-            //declaramos las variables         
-            OleDbConnection conexion = null;
-            DataSet dataSet = null;
-            OleDbDataAdapter dataAdapter = null;
-            string consultaHojaExcel = "Select * from [" + hoja + "$]";
-
-            //esta cadena es para archivos excel 2007 y 2010
             string cadenaConexionArchivoExcel = "provider=Microsoft.Jet.OLEDB.4.0;Data Source='" + archivo + "';Extended Properties=Excel 8.0;";
+            conexion = new OleDbConnection(cadenaConexionArchivoExcel);
+            this.hoja = hoja;
 
-            //para archivos de 97-2003 usar la siguiente cadena
-            //string cadenaConexionArchivoExcel = "provider=Microsoft.Jet.OLEDB.4.0;Data Source='" + archivo + "';Extended Properties=Excel 8.0;";
+        }
+        public  DataSet GetAllData()
+        {        
+            
+            string consultaHojaExcel = "Select * from [" + hoja + "$]";
+            DataSet _dataSet = new DataSet();
+            try
+            {
+                dataAdapter = new OleDbDataAdapter(consultaHojaExcel, conexion); //traemos los datos de la hoja y las guardamos en un dataSdapter
+                 // creamos la instancia del objeto DataSet
+                dataAdapter.Fill(_dataSet, hoja);//llenamos el dataset
+                                                //dataGridView1.DataSource = dataSet.Tables[0]; //le asignamos al DataGridView el contenido del dataSet
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
 
-            //Validamos que el usuario ingrese el nombre de la hoja del archivo de excel a leer
-            if (string.IsNullOrEmpty(hoja))
-            {
-                MessageBox.Show("No hay una hoja para leer");
+                MessageBox.Show(ex.Message);
             }
-            else
+            
+            return _dataSet;
+        }
+        public DataTable GetColumnsFilter()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Value");
+            Object[] _dato = { "Todos", "1" };
+            dt.Rows.Add(_dato);
+            string consultaHojaExcel = "Select * from [" + hoja + "$]";
+            DataSet _dataSet = new DataSet();
+            try
             {
-                //try
-                //{
-                //    //Si el usuario escribio el nombre de la hoja se procedera con la busqueda
-                    conexion = new OleDbConnection(cadenaConexionArchivoExcel);//creamos la conexion con la hoja de excel
-                    conexion.Open(); //abrimos la conexion
-                    dataAdapter = new OleDbDataAdapter(consultaHojaExcel, conexion); //traemos los datos de la hoja y las guardamos en un dataSdapter
-                    dataSet = new DataSet(); // creamos la instancia del objeto DataSet
-                    dataAdapter.Fill(dataSet, hoja);//llenamos el dataset
-                    //dataGridView1.DataSource = dataSet.Tables[0]; //le asignamos al DataGridView el contenido del dataSet
-                    conexion.Close();//cerramos la conexion
-                    //dataGridView1.AllowUserToAddRows = false;       //eliminamos la ultima fila del datagridview que se autoagrega
-                //}
-                //catch (Exception ex)
-                //{
-                //    //en caso de haber una excepcion que nos mande un mensaje de error
-                //    MessageBox.Show( ex.Message);
-                //}
+                dataAdapter = new OleDbDataAdapter(consultaHojaExcel, conexion); //traemos los datos de la hoja y las guardamos en un dataSdapter
+                                                                                 // creamos la instancia del objeto DataSet
+                dataAdapter.Fill(_dataSet, hoja);//llenamos el dataset
+                                                 //dataGridView1.DataSource = dataSet.Tables[0]; //le asignamos al DataGridView el contenido del dataSet
+                conexion.Close();
+                foreach (DataColumn column in _dataSet.Tables[0].Columns)
+                {
+                    Object[] dato = { column.ColumnName, column.ColumnName };
+                    dt.Rows.Add(dato);
+                }
             }
-            return dataSet;
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+
+        public DataSet GetDataFilter(String ColumnFilter,String Value)
+        {
+            string consultaHojaExcel = "Select * from [" + hoja + "$] WHERE ["+ ColumnFilter.Trim() + "] LIKE '%"+ Value + "%'";
+            DataSet _dataSet2 = new DataSet();
+            try
+            {
+                dataAdapter = new OleDbDataAdapter(consultaHojaExcel, conexion); //traemos los datos de la hoja y las guardamos en un dataSdapter
+                                                                                 // creamos la instancia del objeto DataSet
+                dataAdapter.Fill(_dataSet2, hoja);//llenamos el dataset
+                                                 //dataGridView1.DataSource = dataSet.Tables[0]; //le asignamos al DataGridView el contenido del dataSet
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+
+                //MessageBox.Show(ex.Message);
+            }
+
+            return _dataSet2;
         }
     }
 }
