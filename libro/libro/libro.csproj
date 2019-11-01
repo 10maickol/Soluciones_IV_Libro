@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Correo.cs" />
     <Compile Include="EnviarCorreo.cs">
       <SubType>Form</SubType>
     </Compile>
