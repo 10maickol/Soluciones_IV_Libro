@@ -86,5 +86,28 @@ namespace libro
 
             }
         }
+
+        private void Btn_eliminar_Click(object sender, EventArgs e)
+        {
+            int index= grv_data.SelectedRows[0].Index;
+            if (index!=-1)
+            {
+                DataGridViewRow row = grv_data.Rows[index];
+                String pos = row.Cells[0].Value.ToString();
+                XLSConectión conect = new XLSConectión(fileName, hoja);
+                conect.DeleteRow(pos);
+                grv_data.DataSource = conect.GetAllData().Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para elimnar");
+            }
+        }
+
+        private void Btn_openCorreo_Click(object sender, EventArgs e)
+        {
+            EnviarCorreo correo = new EnviarCorreo();
+            correo.Show();
+        }
     }
 }

@@ -39,6 +39,8 @@
             this.btn_openfile = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grv_data = new System.Windows.Forms.DataGridView();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_openCorreo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -61,6 +63,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btn_openCorreo);
+            this.groupBox3.Controls.Add(this.btn_eliminar);
             this.groupBox3.Controls.Add(this.btn_filter);
             this.groupBox3.Controls.Add(this.txt_filter);
             this.groupBox3.Controls.Add(this.label1);
@@ -154,6 +158,26 @@
             this.grv_data.Size = new System.Drawing.Size(855, 306);
             this.grv_data.TabIndex = 0;
             // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Location = new System.Drawing.Point(26, 83);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.btn_eliminar.TabIndex = 4;
+            this.btn_eliminar.Text = "Elimnar";
+            this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
+            // 
+            // btn_openCorreo
+            // 
+            this.btn_openCorreo.Location = new System.Drawing.Point(128, 83);
+            this.btn_openCorreo.Name = "btn_openCorreo";
+            this.btn_openCorreo.Size = new System.Drawing.Size(75, 23);
+            this.btn_openCorreo.TabIndex = 5;
+            this.btn_openCorreo.Text = "Correos";
+            this.btn_openCorreo.UseVisualStyleBackColor = true;
+            this.btn_openCorreo.Click += new System.EventHandler(this.Btn_openCorreo_Click);
+            // 
             // Libro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,5 +211,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbo_filtro;
         private System.Windows.Forms.DataGridView grv_data;
+        private System.Windows.Forms.Button btn_openCorreo;
+        private System.Windows.Forms.Button btn_eliminar;
     }
 }

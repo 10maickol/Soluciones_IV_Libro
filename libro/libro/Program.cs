@@ -16,7 +16,7 @@ namespace libro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NuevoLibrocs());
+            Application.Run(new Libro());
         }
     }
 }

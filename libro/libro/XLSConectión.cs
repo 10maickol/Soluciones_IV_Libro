@@ -93,5 +93,23 @@ namespace libro
 
             return _dataSet2;
         }
+        public void DeleteRow(String pos)
+        {
+            string consultaHojaExcel = "delete from [" + hoja + "$] WHERE [Ord] = '" + pos + "'";
+            DataSet _dataSet2 = new DataSet();
+            try
+            {
+                dataAdapter = new OleDbDataAdapter(consultaHojaExcel, conexion); //traemos los datos de la hoja y las guardamos en un dataSdapter
+                                                                                 // creamos la instancia del objeto DataSet
+                dataAdapter.Fill(_dataSet2, hoja);//llenamos el dataset
+                                                  //dataGridView1.DataSource = dataSet.Tables[0]; //le asignamos al DataGridView el contenido del dataSet
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+
+                //MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
