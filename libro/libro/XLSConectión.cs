@@ -11,7 +11,7 @@ namespace libro
 {
     class XLSConectión
     {
-        private DataSet GetAllData(string archivo, string hoja)
+        public  DataSet GetAllData(string archivo, string hoja)
         {
             //declaramos las variables         
             OleDbConnection conexion = null;
@@ -20,7 +20,7 @@ namespace libro
             string consultaHojaExcel = "Select * from [" + hoja + "$]";
 
             //esta cadena es para archivos excel 2007 y 2010
-            string cadenaConexionArchivoExcel = "provider=Microsoft.ACE.OLEDB.12.0;Data Source='" + archivo + "';Extended Properties=Excel 12.0;";
+            string cadenaConexionArchivoExcel = "provider=Microsoft.Jet.OLEDB.4.0;Data Source='" + archivo + "';Extended Properties=Excel 8.0;";
 
             //para archivos de 97-2003 usar la siguiente cadena
             //string cadenaConexionArchivoExcel = "provider=Microsoft.Jet.OLEDB.4.0;Data Source='" + archivo + "';Extended Properties=Excel 8.0;";
@@ -32,9 +32,9 @@ namespace libro
             }
             else
             {
-                try
-                {
-                    //Si el usuario escribio el nombre de la hoja se procedera con la busqueda
+                //try
+                //{
+                //    //Si el usuario escribio el nombre de la hoja se procedera con la busqueda
                     conexion = new OleDbConnection(cadenaConexionArchivoExcel);//creamos la conexion con la hoja de excel
                     conexion.Open(); //abrimos la conexion
                     dataAdapter = new OleDbDataAdapter(consultaHojaExcel, conexion); //traemos los datos de la hoja y las guardamos en un dataSdapter
@@ -43,12 +43,12 @@ namespace libro
                     //dataGridView1.DataSource = dataSet.Tables[0]; //le asignamos al DataGridView el contenido del dataSet
                     conexion.Close();//cerramos la conexion
                     //dataGridView1.AllowUserToAddRows = false;       //eliminamos la ultima fila del datagridview que se autoagrega
-                }
-                catch (Exception ex)
-                {
-                    //en caso de haber una excepcion que nos mande un mensaje de error
-                    MessageBox.Show("Error, Verificar el archivo o el nombre de la hoja", ex.Message);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    //en caso de haber una excepcion que nos mande un mensaje de error
+                //    MessageBox.Show( ex.Message);
+                //}
             }
             return dataSet;
         }
