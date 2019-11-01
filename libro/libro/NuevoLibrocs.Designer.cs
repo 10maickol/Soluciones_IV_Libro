@@ -29,31 +29,33 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtemisor = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_orden = new System.Windows.Forms.TextBox();
+            this.cb_principal = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cb_nivel1 = new System.Windows.Forms.ComboBox();
+            this.cb_nivel2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_titulo = new System.Windows.Forms.TextBox();
+            this.txt_autor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_is = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cb_idioma = new System.Windows.Forms.ComboBox();
+            this.txt_edicion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_editorial = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_anno = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_ejemplar = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cb_tipo = new System.Windows.Forms.ComboBox();
+            this.btn_agregar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -67,18 +69,18 @@
             this.label1.Text = "Orden:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txtemisor
+            // txt_orden
             // 
-            this.txtemisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemisor.Location = new System.Drawing.Point(102, 26);
-            this.txtemisor.Name = "txtemisor";
-            this.txtemisor.Size = new System.Drawing.Size(157, 26);
-            this.txtemisor.TabIndex = 4;
+            this.txt_orden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_orden.Location = new System.Drawing.Point(102, 26);
+            this.txt_orden.Name = "txt_orden";
+            this.txt_orden.Size = new System.Drawing.Size(157, 26);
+            this.txt_orden.TabIndex = 4;
             // 
-            // comboBox1
+            // cb_principal
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cb_principal.FormattingEnabled = true;
+            this.cb_principal.Items.AddRange(new object[] {
             "Generalidades",
             "Ciencias Sociales",
             "Ciencias Naturales y Matematicas",
@@ -89,10 +91,10 @@
             "Lenguas",
             "Ciencias naturales y matemáticas",
             "Filosofía y Psicología"});
-            this.comboBox1.Location = new System.Drawing.Point(371, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cb_principal.Location = new System.Drawing.Point(371, 28);
+            this.cb_principal.Name = "cb_principal";
+            this.cb_principal.Size = new System.Drawing.Size(188, 21);
+            this.cb_principal.TabIndex = 5;
             // 
             // label2
             // 
@@ -124,10 +126,10 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Sub Nivel 2:";
             // 
-            // comboBox2
+            // cb_nivel1
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cb_nivel1.FormattingEnabled = true;
+            this.cb_nivel1.Items.AddRange(new object[] {
             "Generalidades",
             "Bibliografía",
             "Bibliotecología y ciencias de la información",
@@ -143,15 +145,15 @@
             "Ciencia política",
             "Economía",
             "Administración pública y ciencia militar"});
-            this.comboBox2.Location = new System.Drawing.Point(143, 74);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(188, 21);
-            this.comboBox2.TabIndex = 9;
+            this.cb_nivel1.Location = new System.Drawing.Point(143, 74);
+            this.cb_nivel1.Name = "cb_nivel1";
+            this.cb_nivel1.Size = new System.Drawing.Size(188, 21);
+            this.cb_nivel1.TabIndex = 9;
             // 
-            // comboBox3
+            // cb_nivel2
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cb_nivel2.FormattingEnabled = true;
+            this.cb_nivel2.Items.AddRange(new object[] {
             "Conocimiento",
             "Sistemas",
             "Procesamiento de datos Ciencia de los computadores",
@@ -164,10 +166,10 @@
             "Bibliotecas generales",
             "Lectura y uso de otros medios de información",
             "Medios noticiosos, periodísmo, publicación"});
-            this.comboBox3.Location = new System.Drawing.Point(477, 74);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(188, 21);
-            this.comboBox3.TabIndex = 10;
+            this.cb_nivel2.Location = new System.Drawing.Point(477, 74);
+            this.cb_nivel2.Name = "cb_nivel2";
+            this.cb_nivel2.Size = new System.Drawing.Size(188, 21);
+            this.cb_nivel2.TabIndex = 10;
             // 
             // label5
             // 
@@ -179,21 +181,21 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Titulo:";
             // 
-            // textBox1
+            // txt_titulo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(97, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(387, 26);
-            this.textBox1.TabIndex = 12;
+            this.txt_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_titulo.Location = new System.Drawing.Point(97, 116);
+            this.txt_titulo.Name = "txt_titulo";
+            this.txt_titulo.Size = new System.Drawing.Size(387, 26);
+            this.txt_titulo.TabIndex = 12;
             // 
-            // textBox2
+            // txt_autor
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(554, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 26);
-            this.textBox2.TabIndex = 14;
+            this.txt_autor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_autor.Location = new System.Drawing.Point(554, 113);
+            this.txt_autor.Name = "txt_autor";
+            this.txt_autor.Size = new System.Drawing.Size(268, 26);
+            this.txt_autor.TabIndex = 14;
             // 
             // label6
             // 
@@ -205,13 +207,13 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Autor:";
             // 
-            // textBox3
+            // txt_is
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(128, 166);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(131, 26);
-            this.textBox3.TabIndex = 16;
+            this.txt_is.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_is.Location = new System.Drawing.Point(128, 166);
+            this.txt_is.Name = "txt_is";
+            this.txt_is.Size = new System.Drawing.Size(131, 26);
+            this.txt_is.TabIndex = 16;
             // 
             // label7
             // 
@@ -233,24 +235,24 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Idioma:";
             // 
-            // comboBox4
+            // cb_idioma
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cb_idioma.FormattingEnabled = true;
+            this.cb_idioma.Items.AddRange(new object[] {
             "esp",
             "eng"});
-            this.comboBox4.Location = new System.Drawing.Point(355, 172);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(91, 21);
-            this.comboBox4.TabIndex = 18;
+            this.cb_idioma.Location = new System.Drawing.Point(355, 172);
+            this.cb_idioma.Name = "cb_idioma";
+            this.cb_idioma.Size = new System.Drawing.Size(91, 21);
+            this.cb_idioma.TabIndex = 18;
             // 
-            // textBox4
+            // txt_edicion
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(532, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(62, 26);
-            this.textBox4.TabIndex = 20;
+            this.txt_edicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_edicion.Location = new System.Drawing.Point(532, 169);
+            this.txt_edicion.Name = "txt_edicion";
+            this.txt_edicion.Size = new System.Drawing.Size(62, 26);
+            this.txt_edicion.TabIndex = 20;
             // 
             // label9
             // 
@@ -262,13 +264,13 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Edicion:";
             // 
-            // textBox5
+            // txt_editorial
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(128, 213);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(294, 26);
-            this.textBox5.TabIndex = 22;
+            this.txt_editorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_editorial.Location = new System.Drawing.Point(128, 213);
+            this.txt_editorial.Name = "txt_editorial";
+            this.txt_editorial.Size = new System.Drawing.Size(294, 26);
+            this.txt_editorial.TabIndex = 22;
             // 
             // label10
             // 
@@ -280,13 +282,13 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Editorial:";
             // 
-            // textBox6
+            // txt_anno
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(97, 263);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(86, 26);
-            this.textBox6.TabIndex = 24;
+            this.txt_anno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_anno.Location = new System.Drawing.Point(97, 263);
+            this.txt_anno.Name = "txt_anno";
+            this.txt_anno.Size = new System.Drawing.Size(86, 26);
+            this.txt_anno.TabIndex = 24;
             // 
             // label11
             // 
@@ -298,13 +300,13 @@
             this.label11.TabIndex = 23;
             this.label11.Text = "Año:";
             // 
-            // textBox7
+            // txt_ejemplar
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(287, 269);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(44, 26);
-            this.textBox7.TabIndex = 26;
+            this.txt_ejemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ejemplar.Location = new System.Drawing.Point(287, 269);
+            this.txt_ejemplar.Name = "txt_ejemplar";
+            this.txt_ejemplar.Size = new System.Drawing.Size(44, 26);
+            this.txt_ejemplar.TabIndex = 26;
             // 
             // label12
             // 
@@ -326,46 +328,67 @@
             this.label13.TabIndex = 28;
             this.label13.Text = "Tipo:";
             // 
-            // comboBox5
+            // cb_tipo
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cb_tipo.FormattingEnabled = true;
+            this.cb_tipo.Items.AddRange(new object[] {
             "Físico"});
-            this.comboBox5.Location = new System.Drawing.Point(406, 271);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(188, 21);
-            this.comboBox5.TabIndex = 27;
+            this.cb_tipo.Location = new System.Drawing.Point(406, 271);
+            this.cb_tipo.Name = "cb_tipo";
+            this.cb_tipo.Size = new System.Drawing.Size(188, 21);
+            this.cb_tipo.TabIndex = 27;
+            // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Location = new System.Drawing.Point(181, 345);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(168, 53);
+            this.btn_agregar.TabIndex = 29;
+            this.btn_agregar.Text = "Agregar";
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Location = new System.Drawing.Point(406, 345);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(168, 53);
+            this.btn_cancelar.TabIndex = 30;
+            this.btn_cancelar.Text = "Calcelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
             // 
             // NuevoLibrocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 466);
+            this.Controls.Add(this.btn_cancelar);
+            this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.cb_tipo);
+            this.Controls.Add(this.txt_ejemplar);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txt_anno);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txt_editorial);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_edicion);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cb_idioma);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_is);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_autor);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_titulo);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cb_nivel2);
+            this.Controls.Add(this.cb_nivel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.txtemisor);
+            this.Controls.Add(this.cb_principal);
+            this.Controls.Add(this.txt_orden);
             this.Controls.Add(this.label1);
             this.Name = "NuevoLibrocs";
             this.Text = "NuevoLibrocs";
@@ -377,30 +400,32 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtemisor;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_orden;
+        private System.Windows.Forms.ComboBox cb_principal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cb_nivel1;
+        private System.Windows.Forms.ComboBox cb_nivel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_titulo;
+        private System.Windows.Forms.TextBox txt_autor;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_is;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox cb_idioma;
+        private System.Windows.Forms.TextBox txt_edicion;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_editorial;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_anno;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_ejemplar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cb_tipo;
+        private System.Windows.Forms.Button btn_agregar;
+        private System.Windows.Forms.Button btn_cancelar;
     }
 }
