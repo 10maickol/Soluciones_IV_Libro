@@ -52,12 +52,6 @@
     <Compile Include="EnviarCorreo.Designer.cs">
       <DependentUpon>EnviarCorreo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Libro.cs">
       <SubType>Form</SubType>
     </Compile>
