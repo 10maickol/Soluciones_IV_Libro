@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,14 +107,37 @@ namespace libro
 
         private void Btn_openCorreo_Click(object sender, EventArgs e)
         {
-            EnviarCorreo correo = new EnviarCorreo();
-            correo.Show();
+            //EnviarCorreo correo = new EnviarCorreo();
+            //correo.Show();
         }
 
         private void Btn_text_Click(object sender, EventArgs e)
         {
             XLSConectión conect = new XLSConectión(fileName, hoja);
             DataSet data = conect.GetAllDataText();
+
+            DataTable table = data.Tables[0];
+
+            var result = new StringBuilder();
+            foreach (DataRow row in table.Rows)
+            {
+                for (int i = 0; i < table.Columns.Count; i++)
+                {
+                    result.Append(row[i].ToString());
+                    result.Append(i == table.Columns.Count - 1 ? "\n" : "|");
+                }
+                result.AppendLine();
+            }
+
+            //StreamWriter objWriter = new StreamWriter("C:\\libros.txt", false);
+            StreamWriter objWriter = new StreamWriter("D:\\USP\\CICLO 8\\SOLUCIONES 4\\Libros.txt", false);
+            objWriter.WriteLine(result.ToString());
+            objWriter.Close();
+
+            EnviarCorreo correo = new EnviarCorreo("D:\\USP\\CICLO 8\\SOLUCIONES 4\\Libros.txt");
+            correo.FilePath = "D:\\USP\\CICLO 8\\SOLUCIONES 4\\Libros.txt";
+            correo.Show();
+
         }
     }
 }

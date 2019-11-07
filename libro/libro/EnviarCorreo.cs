@@ -12,10 +12,12 @@ namespace libro
 {
     public partial class EnviarCorreo : Form
     {
+        public String FilePath { get; set; }
         Correo c = new Correo();
-        public EnviarCorreo()
+        public EnviarCorreo(String FilePath)
         {
             InitializeComponent();
+            txtarchivoruta.Text = FilePath;
         }
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
