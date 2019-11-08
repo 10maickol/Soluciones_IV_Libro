@@ -96,7 +96,8 @@ namespace libro
                 DataGridViewRow row = grv_data.Rows[index];
                 String pos = row.Cells[0].Value.ToString();
                 XLSConectión conect = new XLSConectión(fileName, hoja);
-                conect.DeleteRow(pos);
+                int _pos = Convert.ToInt32(pos);
+                conect.DeleteRowFromExcel(_pos);
                 grv_data.DataSource = conect.GetAllData().Tables[0];
             }
             else

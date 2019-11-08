@@ -6,7 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
+using System.Reflection;
 namespace libro
 {
     class XLSConectión
@@ -64,9 +66,9 @@ namespace libro
 
             return _dataSet;
         }
-        public DataTable GetColumnsFilter()
+        public System.Data.DataTable GetColumnsFilter()
         {
-            DataTable dt = new DataTable();
+            System.Data.DataTable dt = new System.Data.DataTable();
             dt.Columns.Add("Nombre");
             dt.Columns.Add("Value");
             Object[] _dato = { "Todos", "1" };
@@ -131,6 +133,32 @@ namespace libro
 
                 //MessageBox.Show(ex.Message);
             }
+        }
+
+        public void DeleteRowFromExcel(int pos)
+        {
+            //Microsoft.Office.Interop.Excel.Application docExcel = new Microsoft.Office.Interop.Excel.Application { Visible = false };
+            //dynamic workbooksExcel = docExcel.Workbooks.Open(@"C:\Users\mahmut.efe\Desktop\Book4.xlsx");
+            //var worksheetExcel = (_Worksheet)workbooksExcel.ActiveSheet;
+
+            //((Range)worksheetExcel.Rows[2, Missing.Value]).Delete(XlDeleteShiftDirection.xlShiftUp);
+
+            //workbooksExcel.Save();
+            //workbooksExcel.Close(false);
+            //docExcel.Application.Quit();
+
+            Excel.Application ExcelApp = new Excel.Application();
+            Excel.Workbook ExcelWorkbook = ExcelApp.Workbooks.Open("");
+            ExcelApp.Visible = true;
+            Excel.Worksheet ExcelWorksheet = ExcelWorkbook.Sheets[1];
+
+            //Excel.Range TempRange = ExcelWorksheet.get_Range("H11", "J15");
+            //Excel.Range TempRange = ExcelWorksheet;
+            ((Excel.Range)ExcelWorksheet.Rows[pos, Missing.Value]).Delete(XlDeleteShiftDirection.xlShiftUp);
+
+            ExcelWorkbook.Save();
+            ExcelWorkbook.Close(false);
+            ExcelApp.Application.Quit();
         }
     }
 }
