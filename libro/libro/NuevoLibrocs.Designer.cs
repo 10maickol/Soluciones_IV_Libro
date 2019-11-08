@@ -95,6 +95,7 @@
             this.cb_principal.Name = "cb_principal";
             this.cb_principal.Size = new System.Drawing.Size(188, 21);
             this.cb_principal.TabIndex = 5;
+            this.cb_principal.SelectedIndexChanged += new System.EventHandler(this.cb_principal_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -333,7 +334,7 @@
             this.cb_tipo.FormattingEnabled = true;
             this.cb_tipo.Items.AddRange(new object[] {
             "Físico"});
-            this.cb_tipo.Location = new System.Drawing.Point(406, 271);
+            this.cb_tipo.Location = new System.Drawing.Point(408, 271);
             this.cb_tipo.Name = "cb_tipo";
             this.cb_tipo.Size = new System.Drawing.Size(188, 21);
             this.cb_tipo.TabIndex = 27;
@@ -392,6 +393,7 @@
             this.Controls.Add(this.label1);
             this.Name = "NuevoLibrocs";
             this.Text = "NuevoLibrocs";
+            this.Load += new System.EventHandler(this.NuevoLibrocs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

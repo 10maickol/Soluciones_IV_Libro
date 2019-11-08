@@ -140,5 +140,11 @@ namespace libro
             correo.Show();
 
         }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            NuevoLibrocs dd = new NuevoLibrocs();
+            dd.Show();
+        }
     }
 }
