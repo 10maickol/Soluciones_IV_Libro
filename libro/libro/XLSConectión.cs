@@ -17,11 +17,13 @@ namespace libro
         //DataSet dataSet = null;
         OleDbDataAdapter dataAdapter = null;
         String hoja;
+        String _Archivo="";
         public XLSConectión(string archivo, string hoja)
         {
             string cadenaConexionArchivoExcel = "provider=Microsoft.Jet.OLEDB.4.0;Data Source='" + archivo + "';Extended Properties=Excel 8.0;";
             conexion = new OleDbConnection(cadenaConexionArchivoExcel);
             this.hoja = hoja;
+            this._Archivo = archivo;
 
         }
         public  DataSet GetAllData()
@@ -137,23 +139,11 @@ namespace libro
 
         public void DeleteRowFromExcel(int pos)
         {
-            //Microsoft.Office.Interop.Excel.Application docExcel = new Microsoft.Office.Interop.Excel.Application { Visible = false };
-            //dynamic workbooksExcel = docExcel.Workbooks.Open(@"C:\Users\mahmut.efe\Desktop\Book4.xlsx");
-            //var worksheetExcel = (_Worksheet)workbooksExcel.ActiveSheet;
-
-            //((Range)worksheetExcel.Rows[2, Missing.Value]).Delete(XlDeleteShiftDirection.xlShiftUp);
-
-            //workbooksExcel.Save();
-            //workbooksExcel.Close(false);
-            //docExcel.Application.Quit();
 
             Excel.Application ExcelApp = new Excel.Application();
-            Excel.Workbook ExcelWorkbook = ExcelApp.Workbooks.Open("");
+            Excel.Workbook ExcelWorkbook = ExcelApp.Workbooks.Open(_Archivo);
             ExcelApp.Visible = true;
             Excel.Worksheet ExcelWorksheet = ExcelWorkbook.Sheets[1];
-
-            //Excel.Range TempRange = ExcelWorksheet.get_Range("H11", "J15");
-            //Excel.Range TempRange = ExcelWorksheet;
             ((Excel.Range)ExcelWorksheet.Rows[pos, Missing.Value]).Delete(XlDeleteShiftDirection.xlShiftUp);
 
             ExcelWorkbook.Save();

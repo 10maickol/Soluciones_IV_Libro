@@ -43,12 +43,20 @@ namespace libro
                 fileName= dialog.FileName;
                 if (!fileName.Equals("") || !hoja.Equals(""))
                 {
-                    XLSConectión conect = new XLSConectión(fileName, hoja);
-                    cbo_filtro.DataSource = conect.GetColumnsFilter();
-                    cbo_filtro.DisplayMember = "Nombre";
-                    cbo_filtro.ValueMember = "Value";
-                    cbo_filtro.SelectedIndex = 0;
-                    grv_data.DataSource = conect.GetAllData().Tables[0];
+                    try
+                    {
+                        XLSConectión conect = new XLSConectión(fileName, hoja);
+                        cbo_filtro.DataSource = conect.GetColumnsFilter();
+                        cbo_filtro.DisplayMember = "Nombre";
+                        cbo_filtro.ValueMember = "Value";
+                        cbo_filtro.SelectedIndex = 0;
+                        grv_data.DataSource = conect.GetAllData().Tables[0];
+                    }
+                    catch (Exception)
+                    {
+
+                       
+                    }
                     
                 }
                 //el nombre del archivo sera asignado al textbox
